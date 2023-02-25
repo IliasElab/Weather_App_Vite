@@ -41,13 +41,23 @@ const Home = () => {
               the city you look for !
             </p>
           </div>
+
+          <Parameters sendCity={sendCity} sendResults={sendResults} />
+        </div>
+
+        <div className="waveContainer">
+          <Wave />
+          <Wave2 />
         </div>
       </section>
 
       {city && (
         <section className="resultPage">
           <h1>{city}</h1>
-          <div className="resultZone"></div>
+          <div className="resultZone">
+            <Animation results={results} />
+            {results && <Results results={results} />}
+          </div>
         </section>
       )}
 
@@ -58,9 +68,37 @@ const Home = () => {
           </h2>
           <h3>Software Engineer</h3>
         </div>
+
+        <Contact />
       </section>
     </div>
   );
 };
 
 export default Home;
+
+function Wave() {
+  return (
+    <svg
+      className="waveAll wave1"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 88.7"
+      preserveAspectRatio="none"
+    >
+      <path d="M800 56.9c-155.5 0-204.9-50-405.5-49.9-200 0-250 49.9-394.5 49.9v31.8h800v-.2-31.6z"></path>
+    </svg>
+  );
+}
+
+function Wave2() {
+  return (
+    <svg
+      className="waveAll wave2"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 800 88.7"
+      preserveAspectRatio="none"
+    >
+      <path d="M800 56.9c-155.5 0-204.9-50-405.5-49.9-200 0-250 49.9-394.5 49.9v31.8h800v-.2-31.6z"></path>
+    </svg>
+  );
+}
