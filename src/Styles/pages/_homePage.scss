@@ -1,0 +1,153 @@
+$spaceBG: url("/space.jpg");
+
+@keyframes spaceBGAnimation {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.introPage {
+  height: 100vh;
+  max-height: 100vh;
+  background: linear-gradient(to bottom, #615aae, #6064ce 20%, #3f7bea);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 0;
+  position: relative;
+
+  .spaceBG {
+    background: linear-gradient(rgba(97, 90, 174, 0.3), #6064ce), $spaceBG;
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    z-index: 1;
+    animation: spaceBGAnimation 8s infinite;
+  }
+
+  .introInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 6rem;
+    gap: 4rem;
+    color: white;
+    text-align: center;
+    z-index: 3;
+    position: relative;
+
+    h1 {
+      font-size: 8rem;
+      font-weight: 900;
+      width: 80%;
+      max-width: 1000px;
+    }
+
+    p {
+      font-size: 4rem;
+      width: 90%;
+      max-width: 1200px;
+    }
+  }
+  .waveContainer {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    bottom: -2px;
+  }
+
+  .waveAll {
+    fill: #71a0f8;
+    width: 100%;
+    height: 80px;
+  }
+
+  .wave1 {
+    position: absolute;
+    animation: wave 10s 0s linear infinite;
+  }
+
+  .wave2 {
+    transform: translateX(100%);
+    animation: wave2 10s 0s linear infinite;
+  }
+
+  @keyframes wave {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes wave2 {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+}
+
+.resultPage {
+  height: 100vh;
+  background-color: #71a0f8;
+  //background: linear-gradient(to bottom, #71a0f8, #3d7cf2);
+
+  h1 {
+    padding: 4rem;
+    padding-left: 8%;
+    font-size: 8rem;
+    color: white;
+  }
+
+  h1:first-letter {
+    text-transform: capitalize;
+  }
+
+  .resultZone {
+    display: flex;
+    justify-content: center;
+    margin: 0 5%;
+    gap: 5%;
+  }
+}
+
+.contactPage {
+  background-image: linear-gradient(#71a0f8, #1852bd);
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5rem;
+
+  .contactTitles {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    h2,
+    h3 {
+      text-align: center;
+      color: white;
+    }
+
+    h2 {
+      font-size: 4rem;
+    }
+
+    h3 {
+      font-size: 3rem;
+    }
+  }
+}

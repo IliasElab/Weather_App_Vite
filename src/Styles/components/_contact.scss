@@ -1,0 +1,25 @@
+.listOfContacts {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  li {
+    height: 8rem;
+    width: 200px;
+
+    a {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      font-size: 3rem;
+
+      i {
+        width: 5rem;
+        height: 5rem;
+        margin-right: 1rem;
+      }
+    }
+  }
+}
